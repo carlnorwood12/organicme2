@@ -1,0 +1,117 @@
+:root {
+    --primary-color: #2e4334; /* Dark text/lines */
+    --light-green: #e9f5e9; /* Background color (approximation) */
+    --faded-text: #a1b0a5; /* Faded heading and numbers (approximation) */
+    --text-font: 'Palatino', 'Times New Roman', serif; /* Font used for headings */
+    --body-font: 'Arial', sans-serif; /* General body font */
+}
+
+/* Base styles and container setup */
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--light-green);
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.ethical-practices-section {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.container {
+    display: grid;
+    /* Two columns: 1 for heading, 2 for the accordion */
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+/* --- Heading Column Styling --- */
+.heading-column h1 {
+    font-family: var(--text-font);
+    font-size: 4.5rem; /* Large font size for impact */
+    font-weight: 400; /* Lighter weight */
+    line-height: 1.1;
+    color: var(--faded-text); /* Faded color */
+    padding-top: 20px; /* Align with the start of the first accordion item */
+}
+
+/* --- Accordion Column Styling --- */
+.accordion-column {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-item {
+    border-top: 1px solid var(--faded-text); /* Separator line */
+    padding-bottom: 5px;
+}
+
+/* No line for the very last item's bottom */
+.accordion-item:last-child {
+    border-bottom: 1px solid var(--faded-text);
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.item-number {
+    font-family: var(--text-font);
+    font-size: 5rem;
+    font-weight: 500;
+    color: var(--faded-text); /* Faded number color */
+    margin-right: 30px;
+}
+
+.item-title {
+    flex-grow: 1; /* Allows the title to take up remaining space */
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.dropdown-icon {
+    margin-left: 20px;
+}
+
+.dropdown-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-color); /* Dark arrow color */
+}
+
+/* --- Responsive Adjustments (for smaller screens) --- */
+@media (max-width: 992px) {
+    .container {
+        /* On smaller screens, stack the columns */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .heading-column h1 {
+        font-size: 3rem;
+        padding-top: 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .item-number {
+        font-size: 1.5rem;
+        margin-right: 15px;
+    }
+
+    .item-title {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,192 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f1d17;
+  color: #333;
+  height: 100vh;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  font-size: 65px;
+  color: #0f1d17;
+}
+#hex1,
+#hex2 {
+  mix-blend-mode: screen;
+  z-index: 99;
+}
+#hex1 {
+  top: 20px;
+  right: -200px;
+  height: 400px;
+  position: absolute;
+}
+#hex2 {
+  bottom: -122px;
+  right: 155px;
+  height: 400px;
+  position: absolute;
+}
+main {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.reasons {
+  position: relative;
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  gap: 20px;
+  width: 100%;
+  background-color: #d3fbd8;
+  height: 550px;
+  overflow: hidden;
+}
+.reasons > *
+{
+    z-index: 9999;
+}
+.options
+{
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  color: #d3fbd8;
+}
+.options h2, .options p
+{
+  color: #d3fbd8;
+}
+.options h2
+{
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.options > :not(:last-child) {
+  border-right: 1px solid #d3fbd8;
+}
+.first, .second, .third, .fourth, .fifth 
+{
+  color: #d3fbd8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+.reasons::before {
+  /* absolute inset-0 z-0 */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0; /* Ensures it stays behind content */
+  background-image: radial-gradient(circle 500px at 100% 30%, #8b5cf666, transparent), 
+  radial-gradient(circle 500px at 70% 100%, rgba(139, 92, 246, 0.3), transparent);
+  background-size: 100% 100%;
+}
+@font-face {
+  font-family: "Kelso";
+  src: url("Italianno-Regular.ttf") format("truetype");
+}
+p {
+  color: rgba(15, 29, 23, 1);
+  max-width: 600px;
+  text-wrap: balance;
+}
+.group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+}
+button:first-child {
+  color: #d3fbd8;
+  background-color: #0f1d17;
+}
+#kelso {
+  position: absolute;
+  top: -40px;
+  margin: 0 auto;
+  font-family: "Kelso";
+  font-size: 50px;
+  color: #0f1d17;
+}
+.buttons {
+  display: inline-flex;
+  gap: 10px;
+}
+button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 2px solid #0f1d17;
+  color: #0f1d17;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+#vid1 {
+  position: absolute;
+  top: 50px;
+  right: -250px;
+  height: 400px;
+  -webkit-mask-image: url("hexagon.svg"); /* Safari and Chrome */
+  mask-image: url("hexagon.svg"); /* Standard */
+  -webkit-mask-size: cover;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+#vid2 {
+  position: absolute;
+  bottom: -155px;
+  right: 100px;
+  height: 400px;
+  -webkit-mask-image: url("hexagon.svg"); /* Safari and Chrome */
+  mask-image: url("hexagon.svg"); /* Standard */
+  -webkit-mask-size: cover;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+#bee {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  height: 40px;
+}
+.logo {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+#wireframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+}
