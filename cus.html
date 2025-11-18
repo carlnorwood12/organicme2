@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Stacked Bubbles - Corrected Flow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* Using the dark background color from the image */
+            background-color: #1f3539; 
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Space between the two bubbles */
+            max-width: 600px;
+            width: 90%; 
+        }
+
+        .bubble {
+            /* Light blue/teal background color from the image */
+            background-color: #b9d2d4; 
+            /* Dark text color from the image */
+            color: #1f3539; 
+            font-weight: 900; /* Extra bold font weight to match image */
+            font-size: clamp(1.8rem, 8vw, 3.5rem); 
+            padding: 20px 30px;
+            line-height: 1.1; /* Tighten line height for word stacking */
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .bubble-top {
+            border-radius: 15px 15px 15px 0; 
+            margin-right: 15%; 
+            align-self: flex-start;
+            padding-right: 20px; 
+        }
+
+        .bubble-bottom {
+            border-radius: 0 15px 15px 15px; 
+            margin-left: 15%; 
+            align-self: flex-end;
+            padding-left: 20px; 
+            /* Ensure the text breaks correctly */
+            white-space: nowrap; 
+        }
+
+        /* --- Optional: Adding the little "speech bubble" points --- */
+        .bubble-top::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 0 solid transparent;
+            border-top: 15px solid #b9d2d4;
+            transform: rotate(-10deg);
+        }
+
+        .bubble-bottom::before {
+            content: '';
+            position: absolute;
+            top: -10px; 
+            left: 0;
+            width: 0;
+            height: 0;
+            border-right: 15px solid transparent;
+            border-left: 0 solid transparent;
+            border-bottom: 15px solid #b9d2d4;
+            transform: rotate(-10deg);
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .bubble-top {
+                margin-right: 5%;
+            }
+            .bubble-bottom {
+                margin-left: 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .bubble-top, .bubble-bottom {
+                margin-left: 0;
+                margin-right: 0;
+                border-radius: 15px;
+                align-self: stretch;
+            }
+            .bubble-top::after, .bubble-bottom::before {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="bubble bubble-top">We help Develop</div>
+        
+        <div class="bubble bubble-bottom">Farmers<br>Sustainable</div>
+    </div>
+
+</body>
+</html>
